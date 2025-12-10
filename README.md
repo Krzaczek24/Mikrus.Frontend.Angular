@@ -1,1 +1,1 @@
-"# Mikrus.Frontend.Angular" 
+# Mikrus.Frontend.Angular
