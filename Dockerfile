@@ -14,14 +14,13 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Install project dependencies using npm ci (ensures a clean, reproducible install)
-RUN npm config set strict-ssl false
-RUN --mount=type=cache,target=/root/.npm npm ci
+RUN npm install
 
 # Copy the rest of the application source code into the container
 COPY . .
 
 # Build the Angular application
-RUN npm run build 
+RUN npm run build --omit=dev 
 
 # =========================================
 # Stage 2: Prepare Nginx to Serve Static Files
