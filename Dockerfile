@@ -20,7 +20,7 @@ RUN --mount=type=cache,target=/root/.npm npm ci --prefer-offline
 COPY . .
 
 # Build the Angular application
-RUN npm run build --omit=dev
+RUN npm run build --omit=dev --verbose
 
 # =========================================
 # Stage 2: Prepare Nginx to Serve Static Files
